@@ -1,171 +1,68 @@
-# ![](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png) ToDo List Deliverable
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Review
+## Available Scripts
 
+In the project directory, you can run:
 
-So, we've gone through all of the basics of React. To really hammer it home with practice, let's walk through complete creation of an app. This will be a to-do list, keeping track of everything we need to do for the day (after we finish this!). It's a lot, so we're going to want it to be editable.
+### `npm start`
 
-This is what it should look like at the end **without styling**:
+Runs the app in the development mode.<br>
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-![list-preview](https://github.com/WDI-SEA/react_state_exercises_global/blob/master/images/todo-list-3.png)
+The page will reload if you make edits.<br>
+You will also see any lint errors in the console.
 
+### `npm test`
 
-## Getting Started
+Launches the test runner in the interactive watch mode.<br>
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-> This is a good time to check your Activity Monitor program and close all your running node processes. Fresh start!
+### `npm run build`
 
-Use `create-react-app` to create a To-Do list project. `cd` into your folder and run `npm start` to start a server that will serve your new React application!
+Builds the app for production to the `build` folder.<br>
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-* Make sure that as you go, you frequently check the site to ensure your changes are all reflecting accurately!
+The build is minified and the filenames include the hashes.<br>
+Your app is ready to be deployed!
 
-## First, the basic list.
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-Let's change the name of the component in `App.js` to something more meaningful, like `MyList`. This is just for good practice so we have meaningful component and file names. Make sure to rename your file `App.js` to `MyList.js` to match the name of the component.
+### `npm run eject`
 
-Change the contents of the render function to the following:
+**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-```js
-render() {
-  return (
-    <div>
-      <header>My List</Header>
-      <div>
-        <ul>
-          <li>Test List Item</li>
-        </ul>
-      </div>
-    </div>
-  )
-}
-```
+If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-> Remember to change the name of the component where it's rendered in index.js! You'll also have to change the `import` statement in `index.js`, since you changed the name of the file containing the component that `index.js` is importing from!
+Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-Now, our webpage displays an empty list.
+You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-Make a component called `ListItem`. This component is going to display the contents of our list. We'll make an instance of this component for each item we want to show in our todo list. For now, this component can simply render  `<li>Make the list!</li>` so that we are starting with something in this list.
+## Learn More
 
-* Remember to use an `export` statement at the end of the new file to make the code in this file available elsewhere in our application.
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-* Don't forget to import your `ListItem` component into `MyList.js`.  Then, include the component in what `MyList` renders with `<ListItem />` under the existing header (in place of the existing list item)!
+To learn React, check out the [React documentation](https://reactjs.org/).
 
-```js
-render() {
-  return (
-    <div>
-      <header>My List</Header>
-      <div>
-        <ul>
-          <ListItem />
-        </ul>
-      </div>
-    </div>
-  )
-}
-```
+### Code Splitting
 
-At this point, our app looks like this:
+This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
 
-![list-preview](https://github.com/WDI-SEA/react_state_exercises_global/blob/master/images/todo-list-1.png)
+### Analyzing the Bundle Size
 
+This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
 
-## Second, props.
+### Making a Progressive Web App
 
-This is a great start - we've already nested components (`ListItem` inside of `MyList`). Now, let's add some props to make this useful and check that current list item off!
+This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
 
-Let's first just pass a prop into `ListItem` from `MyList`. We'll call the prop something simple, like `doThis`. 
-Make the value different that what you already have so you can make sure your changes are rendering
+### Advanced Configuration
 
-Then, in `ListItem`, we'll add a list item that uses the `doThis` prop instead of the existing hard-coded text.
+This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
 
-Now that we've passed in a prop to `ListItem`, we need to call it in `ListItem.js` using `this.props`
+### Deployment
 
-Your app should look like it was in the previous step with a different to-do item.
+This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
 
+### `npm run build` fails to minify
 
-## Third, render different items in an array.
-
-If we want to make this a truly extensible list, we could create an array of items, pass them into props through the `ListItem` component, and then render each item. Let's do that now.
-
-The easiest way to do this is by using the `map` function. A map is like a `for` loop. With `map`, you make a new variable and iterate through each item in an array with it. It looks like this:
-
-
-```
-let <new_Variable_Name> = <the_Array_We_Are_Mapping>.map( (local_Variable_Name_to_Loop, index) => (
-  <what_To_Do_With_Each_Item_in_Loop>
-))
-```
-
-Here's a simple example that makes a new array by adding an `!` to each element of an array.
-
-```js
-const phrases = ['ice cream', 'dinosaurs', 'hobbits']
-
-let excitedPhrases = phrases.map( (phrase, index) => {
-  return newPhrase = phrase + '!'
-})
-// excitedPhrases is ["ice cream!", "dinosaurs!", "hobbits!"]
-```
-
-> Note that in the above example, moustaches are used after the arrow rather than the open parentheses in the earlier example.
-In ES6, with arrow functions, you can omit the curly brackets and `return` keyword if the return value can be written as a single statement. In the same way that we `return` a single HTML element in a component's `render()` function, we can place this single-statement return value in parentheses and make use of line-breaks without confusing javascript.
-
-##### Plan
-
-* In the `MyList` component, have an array of items for the list—uncreatively called `theList`—that is passed down from `index.js` in the form of a prop
-* Create a variable to refer to the new array output by the `map` method, uncreatively but helpfully called `todoItems`.
-* Use `map` to iterate through the `todoItems` array, one `item` (this could be any name you'd like) at a time, and use each one to create a `ListItem` component in the `todoItems` list.
-* We can later refer to this list by just calling the variable in JSX (like any other variable).  For example, we could say  `{todoItems}`.
-
-##### Implementing the Plan
-
-First, make a list in `index.js`. Make an array of strings that represent your todo items. 
-Fill it with what you need to do for the day. Once you've done that, pass that array into your
-`<MyList />` component.
-
-The next step is to use the `map` function to create an array of `<ListItem />`s called `todoItems`, each with 
-its own `doThis` prop that represents a todo item from `theList`.
-
-<details>
-  <summary>Need a hint?</summary>
-  
-  Here a `map` function call that will create a new array filled with components
-  ```jsx
-  let iceCreamFlavors = flavorsArray.map((flavorName, index) => (
-    <IceCream flavor={flavorName} key={'flavor'+index} />
-  ))
-  ```
-</details>
-
-> NOTE: When you have many children components, it's good to add a `key` section that functions similar to an ID. 
-
-The last step is to call the `todoItems` in the render function of `MyList` class.
-
-<details>
-  <summary>Not sure what your component should look like?</summary>
-  
-  ```jsx
-  class MyList extends Component {
-    render() {
-      let todoItems = this.props.theList.map((item, index) => (
-        <ListItem doThis={item} key={'todo' + index} />
-      ))
-
-      return (
-        <div>
-          <h1>Things I should stop procrastinating:</h1>
-          <ul>
-            {todoItems}
-          </ul>
-        </div>
-      )
-    }
-  }
-  ```
-</details>
-
-Your app should now look like the first image!
-
-## Bonus
-
-Do some styling! Try separating your overall styles (like background color) and your component specific styles (like the color of your to-do items) in different css files and importing them.
+This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
