@@ -5,7 +5,7 @@ import MyList from './MyList';
 import * as serviceWorker from './serviceWorker';
 
 let items = [
-    'fucking work',
+    'working list',
     'please',
     'You know you want to'
 ]
