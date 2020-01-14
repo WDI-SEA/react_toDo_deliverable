@@ -1,13 +1,7 @@
 import React from 'react'
 
-
-
-const ListItem = () => {
-	return (
-
-		<li>Make the List!</li>
-		
-	)
+const ListItem = props => {
+	return <li>{props.doThis}</li>
 }
 
 export default ListItem

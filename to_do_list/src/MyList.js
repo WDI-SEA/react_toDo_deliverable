@@ -2,7 +2,10 @@ import React from 'react';
 import './App.css';
 import ListItem from './ListItem'
 
-function MyList () {
+const MyList = props => {
+  let theList = props.items.map((l, i) => {
+    return <ListItem doThis={l} key={i} />
+  })
   return (
     <div className="App">
       <header className="App-header">
@@ -10,7 +13,7 @@ function MyList () {
       </header>
       <div class="main">
         <ul>
-        <ListItem />
+        {theList}
         </ul>
       </div>
     </div>
