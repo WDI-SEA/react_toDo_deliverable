@@ -4,11 +4,10 @@ import './index.css';
 import App from './myList';
 import * as serviceWorker from './serviceWorker';
 
-let doThis = ['dishes', 'sweeping', 'homework']
 
 ReactDOM.render(
   <React.StrictMode>
-    <App doThis = {doThis} />
+    <App />
   </React.StrictMode>,
   document.getElementById('root')
 );

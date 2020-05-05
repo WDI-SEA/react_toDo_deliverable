@@ -3,24 +3,19 @@ import logo from './logo.svg';
 import './App.css';
 import ListStuff from './listStuff'
 
-
+let doThis = ['dishes', 'sweeping', 'homework']
 
 function App(props) {
-  let parseList = props.doThis.map( (todo, index) => {
-    return (<li> {todo}! </li>)
-  })
+
 
   return (
     <div className="App">
       <div>
 
       <header className="App-header">
-      <ListStuff />
+      <h1>Things I Should Stop Procrastinating: </h1>
         <div>
-   
-            <ul>
-                {parseList}
-            </ul>
+          <ListStuff doThis={doThis} />
         </div>
       </header>
 

@@ -1,9 +1,14 @@
 import React from 'react'
 
-const ListStuff = () => {
+const ListStuff = (props) => {
+    let parseList = props.doThis.map( (todo, index) => {
+        return (<li> {todo}! </li>)
+      })
     return (
         <div>
-            <h1>Things I Should Stop Procrastinating: </h1>
+            <ul>
+                {parseList}
+            </ul>
         </div>
     )
 }
