@@ -1,0 +1,135 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 9.5vmin;
+  pointer-events: none;
+  border: 10px solid rgb(17, 16, 16);
+  border-radius: 50%;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 3s linear;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .carBody {
+    animation: Speedy-Boi infinite  20s linear;
+  }
+}
+
+.carBody {
+  position: absolute;
+}
+
+.heady {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  color: black;
+  text-shadow: 0px 0px 6px white;
+  font-size: 32px;
+}
+
+.carTop {
+  border-bottom: 25px solid rgb(31, 31, 31);
+	border-left: 30px solid transparent;
+	border-right: 60px solid transparent;
+	height:0;
+	width: 90px;
+  border-radius: 50% 50% 0 0;
+  margin: 0 auto;
+}
+
+.carBottom {
+  width: 100%;
+  height: 9vmin;
+  background-image: linear-gradient(rgb(109, 9, 139), rgb(0,0,0));
+  padding: 5px 10px 0 30px;
+  border-radius: 40px 30px 150px 200px ;
+  border-bottom: 5px solid black;
+}
+
+.carBottom:hover {
+  background-image: linear-gradient(rgb(187, 0, 0), rgb(0,0,0));
+}
+
+.headlight {
+  background-color: rgb(235, 216, 46);
+  height: 10px;
+  width: 15px;
+  position: absolute;
+  top: 35px;
+  right: 0;
+  left: 107.2%;
+  z-index: 10;
+  box-shadow: 15px 0 20px rgb(235, 216, 46);
+  border-radius: 5px 5px 5px 200px;
+  border: 2px solid black;
+}
+
+.backlight {
+  background-color: rgb(255, 9, 9);
+  height: 10px;
+  width: 15px;
+  position: absolute;
+  top: 35px;
+  right: 0;
+  left: 0;
+  z-index: 10;
+  box-shadow: -15px 0 20px rgb(255, 9, 9);
+  border-radius: 5px 5px 200px 45px;
+  border: 2px solid black;
+}
+
+.fire {
+  width: 50%;
+  height: 7vmin;
+  position: absolute;
+  top: 30px;
+  left: 90px;
+  right: 0;
+  transform: scaleX(-1);
+}
+
+.App-header {
+  background-color: #3f5248;
+  min-height: 20vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+
+
+
+@keyframes App-logo-spin {
+  from {
+    transform:  rotate(0deg) ;
+    
+  }
+  to {
+    transform: rotate(360deg) ;
+  }
+  
+}
+
+@keyframes Speedy-Boi {
+  from {
+    transform:  translate(-250%) ;
+    
+  }
+  to {
+    transform: translate(250%) ;
+  }
+  
+}

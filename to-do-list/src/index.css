@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css?family=IM+Fell+DW+Pica&display=swap');
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: 'IM Fell DW Pica', serif;
+  background-color: rgb(25, 32, 30);
+}
+
+header {
+  margin: 0;
+  position: relative;
+  z-index: 2;
+  padding-bottom: 10px;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.pagePic {
+  width: 40%;
+  border-radius: 5px;
+  box-shadow: 0px 0px 20px black;
+}
+
+ul {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr;
+  font-size: 24px;
+}
+
+.toDo {
+  box-shadow: 0 0 5px black;
+  margin: 5px auto 5px auto;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.75);
+  width: 50%;
+  color: white;
+}
+
+.boxyBox {
+  width: 90%;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 0 0 0.01% 0;
+  margin: 0 auto;
+  border-radius: 0 0 5px 5px;
+  box-shadow: 0 0 20px black;
+}
+
+.listBox {
+  background: url('http://www.neilaburns.com/wp-content/uploads/2018/11/videoblocks-pine-tree-mountain-forest-in-the-fog_b6y_tls8z_thumbnail-full01.png');
+  background-size: cover;
+  margin-top: 0;
+  margin-bottom: 40px;
+  box-shadow: 0 0 10px black;
+  padding: 10px;
+  border-radius: 0 0 5px 5px;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+}
+
+
+
