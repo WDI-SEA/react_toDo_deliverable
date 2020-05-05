@@ -8,7 +8,7 @@ let doThis = ['dishes', 'sweeping', 'homework']
 function App(props) {
 
   let parseList = doThis.map( (todo, index) => {
-    return <listStuff listing = {todo} />
+    return <ListStuff listing = {todo} key={index} />
   })
 
   return (
@@ -18,7 +18,9 @@ function App(props) {
       <header className="App-header">
       <h1>Things I Should Stop Procrastinating: </h1>
         <div>
-          {parseList}
+          <ul>
+            {parseList}
+          </ul>
         </div>
       </header>
 
