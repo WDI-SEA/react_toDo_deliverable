@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import logo from './todo.png';
 import ListItem from './ListItem'
 
 function MyList(props) {
@@ -10,21 +11,19 @@ function MyList(props) {
   return (
     <div className="App">
       <div>
-      <header>My List </header>
-      <div>
-        <h1>Things I should stop procrastinating</h1>
-
-        <ul>
-        <ListItem listitem={props.theList[0]}/>
-       
-        <ListItem listitem={props.theList[1]}/>
-       
-        <ListItem listitem={props.theList[2]}/>
-        </ul>
+      <header class="App-header">
+        My Todo List 
+      <img src={logo} className="App-logo" alt="logo" />
+      </header>
+      <hr/>
+      <div >
+        <h1 >Things I should stop procrastinating:</h1>
         <hr/>
-
-        <h1>Things I should stop procrastinating</h1>
+         <section>
         <ul> {todoItems} </ul>
+        </section>
+       
+       
 
       </div>
     </div>
