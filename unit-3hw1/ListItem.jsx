@@ -4,7 +4,7 @@ const ListItem = props => {
     return (
         <div>
             <li>
-               { props.text }
+               { props.item }
             </li>
         </div>
     )
